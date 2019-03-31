@@ -1,0 +1,7 @@
+BEGIN;
+	CREATE TABLE redirects (
+		id		SERIAL	PRIMARY KEY,
+		host		TEXT	NOT NULL UNIQUE,
+		destination	TEXT	NOT NULL
+	);
+COMMIT;
