@@ -1,0 +1,9 @@
+BEGIN;
+	CREATE TABLE users (
+		id		SERIAL	PRIMARY KEY,
+		email		TEXT	NOT NULL UNIQUE,
+		passhash	TEXT	NOT NULL
+	);
+
+	ALTER TABLE redirects ADD COLUMN owner INTEGER REFERENCES users(id);
+COMMIT;

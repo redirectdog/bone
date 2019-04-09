@@ -1,0 +1,4 @@
+BEGIN;
+	ALTER TABLE redirects DROP COLUMN owner;
+	DROP TABLE users;
+COMMIT;
