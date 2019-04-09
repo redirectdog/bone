@@ -1,0 +1,8 @@
+BEGIN;
+	CREATE TABLE logins (
+		id	SERIAL		PRIMARY KEY,
+		token	UUID		NOT NULL UNIQUE,
+		user_id	INTEGER		NOT NULL REFERENCES users(id),
+		created	TIMESTAMP	NOT NULL
+	);
+COMMIT;
