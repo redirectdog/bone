@@ -1,0 +1,9 @@
+BEGIN;
+	ALTER TABLE redirects ADD COLUMN allow_tls BOOLEAN NOT NULL DEFAULT FALSE;
+	ALTER TABLE redirects ADD COLUMN acme_token TEXT;
+	ALTER TABLE redirects ADD COLUMN acme_key_authorization TEXT;
+	ALTER TABLE redirects ADD COLUMN acme_failed BOOLEAN NOT NULL DEFAULT FALSE;
+	ALTER TABLE redirects ADD COLUMN tls_privkey BYTEA;
+	ALTER TABLE redirects ADD COLUMN tls_cert BYTEA;
+	ALTER TABLE redirects ADD COLUMN tls_renewed_at TIMESTAMP WITH TIME ZONE;
+COMMIT;
