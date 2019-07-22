@@ -1,0 +1,4 @@
+BEGIN;
+	ALTER TABLE redirects ADD COLUMN record_confirmed BOOLEAN NOT NULL DEFAULT FALSE;
+	ALTER TABLE redirects ADD COLUMN last_dns_check TIMESTAMPTZ;
+COMMIT;
