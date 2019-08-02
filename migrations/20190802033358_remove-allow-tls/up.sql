@@ -1,0 +1,3 @@
+BEGIN;
+	ALTER TABLE redirects DROP COLUMN allow_tls;
+COMMIT;
